@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>تحويل الصوت إلى نص</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>🎤 تحويل الصوت إلى نص</h1>
+
+    <input type="file" id="fileInput" accept="audio/*,video/*" />
+
+    <button onclick="uploadFile()">ابدأ التحويل</button>
+
+    <div id="status"></div>
+
+    <pre id="result"></pre>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
