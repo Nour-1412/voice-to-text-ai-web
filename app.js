@@ -1,34 +1,32 @@
-async function uploadFile() {
-  const fileInput = document.getElementById("fileInput");
-  const file = fileInput.files[0];
+let recognition;
 
-  if (!file) {
-    alert("اختر ملف أولاً");
+function startRecording() {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    alert("المتصفح لا يدعم الميزة");
     return;
   }
 
-  document.getElementById("status").innerText = "⏳ جاري التحويل...";
+  recognition = new SpeechRecognition();
+  recognition.lang = "ar-SA"; // العربية
+  recognition.continuous = true;
 
-  const formData = new FormData();
-  formData.append("file", file);
-  formData.append("model", "whisper-1");
+  recognition.onresult = function(event) {
+    let text = "";
 
-  try {
-    const response = await fetch("https://api.openai.com/v1/audio/transcriptions", {
-      method: "POST",
-      headers: {
-        "Authorization": "Bearer YOUR_API_KEY_HERE"
-      },
-      body: formData
-    });
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      text += event.results[i][0].transcript + " ";
+    }
 
-    const data = await response.json();
+    document.getElementById("output").innerText = text;
+  };
 
-    document.getElementById("status").innerText = "✅ تم التحويل";
-    document.getElementById("result").innerText = data.text;
+  recognition.start();
+}
 
-  } catch (error) {
-    document.getElementById("status").innerText = "❌ حدث خطأ";
-    console.error(error);
+function stopRecording() {
+  if (recognition) {
+    recognition.stop();
   }
 }
