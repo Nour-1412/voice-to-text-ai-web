@@ -2,32 +2,44 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>أداة تحويل الصوت إلى نص</title>
+  <title>VoiceAI Studio Pro</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="container">
+<header>
+  <div class="logo">🎤 VoiceAI Pro</div>
+  <div class="user">👤 Free Plan</div>
+</header>
 
-    <h1>🎤 تحويل الصوت إلى نص</h1>
-    <p>مجاني 100% ويعمل مباشرة من المتصفح</p>
+<div class="container">
 
-    <button onclick="startRecording()" class="btn">
-      ▶ بدء التسجيل
+  <h1>لوحة التحكم</h1>
+
+  <div class="card">
+    <h3>رفع ملف صوت</h3>
+    <input type="file" id="fileInput">
+
+    <button onclick="uploadFile()" class="btn">
+      🚀 تحويل الآن
     </button>
 
-    <button onclick="stopRecording()" class="btn stop">
-      ⏹ إيقاف
-    </button>
+    <p id="status"></p>
 
-    <div class="box">
-      <h3>النص الناتج:</h3>
-      <p id="output">...</p>
+    <div class="result">
+      <pre id="result"></pre>
     </div>
 
+    <button onclick="copyText()" class="btn small">نسخ</button>
   </div>
 
-  <script src="app.js"></script>
+  <div class="usage">
+    الاستخدام المتبقي: <span id="limit">5</span>/5
+  </div>
+
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
