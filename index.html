@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <title>تحويل الصوت إلى نص</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>أداة تحويل الصوت إلى نص</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
   <div class="container">
+
     <h1>🎤 تحويل الصوت إلى نص</h1>
+    <p>مجاني 100% ويعمل مباشرة من المتصفح</p>
 
-    <input type="file" id="fileInput" accept="audio/*,video/*" />
+    <button onclick="startRecording()" class="btn">
+      ▶ بدء التسجيل
+    </button>
 
-    <button onclick="uploadFile()">ابدأ التحويل</button>
+    <button onclick="stopRecording()" class="btn stop">
+      ⏹ إيقاف
+    </button>
 
-    <div id="status"></div>
+    <div class="box">
+      <h3>النص الناتج:</h3>
+      <p id="output">...</p>
+    </div>
 
-    <pre id="result"></pre>
   </div>
 
   <script src="app.js"></script>
