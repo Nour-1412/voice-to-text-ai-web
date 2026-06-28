@@ -1,45 +1,222 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <title>VoiceAI Studio Pro</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VoiceAI Pro | تحويل الصوت والفيديو إلى نص</title>
+
+    <meta name="description"
+        content="VoiceAI Pro منصة احترافية لتحويل الصوت والفيديو إلى نص بسرعة ودقة باستخدام الذكاء الاصطناعي.">
+
+    <meta name="keywords"
+        content="تحويل صوت إلى نص, Speech To Text, VoiceAI, AI, Whisper">
+
+    <meta name="theme-color" content="#070B14">
+
+    <link rel="icon" href="assets/logo.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/animations.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-<header>
-  <div class="logo">🎤 VoiceAI Pro</div>
-  <div class="user">👤 Free Plan</div>
-</header>
+    <!-- خلفية متحركة -->
+    <div class="background-blur"></div>
 
-<div class="container">
+    <!-- رأس الصفحة -->
+    <header class="navbar">
 
-  <h1>لوحة التحكم</h1>
+        <div class="logo">
 
-  <div class="card">
-    <h3>رفع ملف صوت</h3>
-    <input type="file" id="fileInput">
+            <img src="assets/logo.svg" alt="VoiceAI Pro">
 
-    <button onclick="uploadFile()" class="btn">
-      🚀 تحويل الآن
-    </button>
+            <span>VoiceAI Pro</span>
 
-    <p id="status"></p>
+        </div>
 
-    <div class="result">
-      <pre id="result"></pre>
-    </div>
+        <nav>
 
-    <button onclick="copyText()" class="btn small">نسخ</button>
-  </div>
+            <a href="#">الرئيسية</a>
 
-  <div class="usage">
-    الاستخدام المتبقي: <span id="limit">5</span>/5
-  </div>
+            <a href="#">المميزات</a>
 
-</div>
+            <a href="#">الأسعار</a>
 
-<script src="app.js"></script>
+            <a href="#">التواصل</a>
+
+        </nav>
+
+        <button class="login-btn">
+            تسجيل الدخول
+        </button>
+
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                ✨ منصة ذكاء اصطناعي احترافية
+            </span>
+
+            <h1>
+
+                حوّل
+                <span>الصوت والفيديو</span>
+                إلى نص خلال ثوانٍ
+
+            </h1>
+
+            <p>
+
+                سرعة عالية • دقة ممتازة • واجهة احترافية • دعم العربية وأكثر من 100 لغة
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn">
+
+                    🚀 ابدأ مجانًا
+
+                </button>
+
+                <button class="secondary-btn">
+
+                    ▶ شاهد العرض
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- أداة التحويل -->
+    <section class="tool">
+
+        <div class="tool-card">
+
+            <h2>رفع الملف</h2>
+
+            <div class="drop-zone">
+
+                <div class="upload-icon">
+                    📂
+                </div>
+
+                <h3>
+
+                    اسحب الملف هنا
+
+                </h3>
+
+                <p>
+
+                    أو اضغط لاختيار ملف
+
+                </p>
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    hidden>
+
+                <button id="chooseFile">
+
+                    اختيار ملف
+
+                </button>
+
+                <small>
+
+                    MP3 • WAV • MP4 • M4A • AAC
+
+                </small>
+
+            </div>
+
+            <button id="startBtn">
+
+                🚀 بدء التحويل
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- النتائج -->
+
+    <section class="results">
+
+        <div class="result-card">
+
+            <div class="result-header">
+
+                <h2>
+
+                    📝 النص المستخرج
+
+                </h2>
+
+                <div class="actions">
+
+                    <button>📋 نسخ</button>
+
+                    <button>📄 PDF</button>
+
+                    <button>📝 DOCX</button>
+
+                    <button>🌍 ترجمة</button>
+
+                    <button>✨ تلخيص</button>
+
+                </div>
+
+            </div>
+
+            <div id="result">
+
+                بانتظار رفع الملف...
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- التذييل -->
+
+    <footer>
+
+        <p>
+
+            © 2026 VoiceAI Pro — جميع الحقوق محفوظة
+
+        </p>
+
+    </footer>
+
+    <script src="js/app.js"></script>
+
 </body>
-</html>
+
+              </html>
